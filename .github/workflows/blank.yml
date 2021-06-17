@@ -28,7 +28,7 @@ jobs:
                console.log(r)
                console.log(github.repos.getLatestRelease(
                  owner="openshift",
-                 repo=r)
+                 repo=r))
              })
           # Whether to tell the GitHub client to log details of its requests
           debug: true
