@@ -47,12 +47,12 @@ RUN dnf install -y jq rhash unzip
 ARG OC_VERSION="stable"
 ENV OC_URL="https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/${OC_VERSION}"
 
-# Replace version with a version number to pin a specific version (eg: "4.7.8")
-ARG ROSA_VERSION="tags/v1.1.6"
+# Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.1.4")
+ARG ROSA_VERSION="tags/v1.1.7"
 ENV ROSA_URL="https://api.github.com/repos/openshift/rosa/releases/${ROSA_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
-ARG OSDCTL_VERSION="tags/v0.7.0"
+ARG OSDCTL_VERSION="tags/v0.9.0"
 ENV OSDCTL_URL="https://api.github.com/repos/openshift/osdctl/releases/${OSDCTL_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
@@ -70,7 +70,7 @@ ENV AWSCLI_URL="https://awscli.amazonaws.com/${AWSCLI_VERSION}"
 ENV AWSSIG_URL="https://awscli.amazonaws.com/${AWSCLI_VERSION}.sig"
 
 # Add `yq` utility for programatic yaml parsing
-ARG YQ_VERSION="latest"
+ARG YQ_VERSION="tags/v4.16.2"
 ENV YQ_URL="https://api.github.com/repos/mikefarah/yq/releases/${YQ_VERSION}"
 
 # Directory for the extracted binaries, etc
@@ -205,7 +205,7 @@ COPY utils/bin /root/.local/bin
 RUN pip3 install o-must-gather
 
 # Setup pagerduty-cli
-ARG PAGERDUTY_VERSION="latest"
+ARG PAGERDUTY_VERSION="0.0.82"
 RUN npm install -g pagerduty-cli@${PAGERDUTY_VERSION}
 
 # Setup bashrc.d directory
