@@ -37,19 +37,19 @@ ARG OC_VERSION="stable"
 ENV OC_URL="https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/${OC_VERSION}"
 
 # Replace version with a version number to pin a specific version (eg: "4.7.8")
-ARG ROSA_VERSION="latest"
+ARG ROSA_VERSION="tags/v1.1.4"
 ENV ROSA_URL="https://api.github.com/repos/openshift/rosa/releases/${ROSA_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
-ARG OSDCTL_VERSION="latest"
+ARG OSDCTL_VERSION="tags/v0.6.0"
 ENV OSDCTL_URL="https://api.github.com/repos/openshift/osdctl/releases/${OSDCTL_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
-ARG OCM_VERSION="latest"
+ARG OCM_VERSION="tags/v0.1.58"
 ENV OCM_URL="https://api.github.com/repos/openshift-online/ocm-cli/releases/${OCM_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
-ARG VELERO_VERSION="latest"
+ARG VELERO_VERSION="tags/v1.7.0"
 ENV VELERO_URL="https://api.github.com/repos/vmware-tanzu/velero/releases/${VELERO_VERSION}"
 
 # Replace AWS client zipfile with specific file to pin to a specific version
@@ -59,7 +59,7 @@ ENV AWSCLI_URL="https://awscli.amazonaws.com/${AWSCLI_VERSION}"
 ENV AWSSIG_URL="https://awscli.amazonaws.com/${AWSCLI_VERSION}.sig"
 
 # Add `yq` utility for programatic yaml parsing
-ARG YQ_VERSION="latest"
+ARG YQ_VERSION="tags/v4.13.5"
 ENV YQ_URL="https://api.github.com/repos/mikefarah/yq/releases/${YQ_VERSION}"
 
 # Directory for the extracted binaries, etc
