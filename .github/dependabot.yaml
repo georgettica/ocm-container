@@ -1,0 +1,17 @@
+# https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
+version: 2
+updates:
+- directory: "/"
+  labels:
+  - "dependency"
+  - "merge when passing"
+  package-ecosystem: "github-actions"
+  schedule:
+    interval: "daily"
+- directory: "/"
+  labels:
+  - "dependency"
+  - "merge when passing"
+  package-ecosystem: "docker"
+  schedule:
+    interval: "daily"
