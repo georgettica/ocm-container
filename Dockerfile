@@ -94,7 +94,6 @@ ENV OCM_URL="https://api.github.com/repos/${OCM_URL_SLUG}/releases/${OCM_VERSION
 
 # Add `osdctl` utility for common OSD commands
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
-# the URL_SLUG is for checking the releasenotes when a version updates
 ARG OSDCTL_VERSION="tags/v0.9.3"
 ENV OSDCTL_URL_SLUG="openshift/osdctl"
 ENV OSDCTL_URL="https://api.github.com/repos/${OSDCTL_URL_SLUG}/releases/${OSDCTL_VERSION}"
@@ -110,7 +109,7 @@ ENV ROSA_URL="https://api.github.com/repos/${ROSA_URL_SLUG}/releases/${ROSA_VERS
 # Add `velero` utility for quick backup verification
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
 # the URL_SLUG is for checking the releasenotes when a version updates
-ARG VELERO_VERSION="tags/v1.7.1"
+ARG VELERO_VERSION="tags/v1.8.1"
 ENV VELERO_URL_SLUG="vmware-tanzu/velero"
 ENV VELERO_URL="https://api.github.com/repos/${VELERO_URL_SLUG}/releases/${VELERO_VERSION}"
 
