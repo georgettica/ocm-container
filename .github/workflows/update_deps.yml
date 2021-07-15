@@ -1,0 +1,80 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  schedule:
+  - cron: "0 2 * * *"
+  workflow_dispatch:
+  
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - run: npm install fs
+      - uses: actions/github-script@v4
+        with:
+          script: |
+            const data =  [
+              {
+                owner: "openshift",
+                repo: "osdctl",
+                envvar: "OSDCTL_VERSION"
+                },
+              {
+                owner: "openshift",
+                repo: "rosa",
+                envvar: "ROSA_VERSION"
+                },
+              {
+                owner: "openshift-online",
+                repo: "ocm-cli",
+                envvar: "OCM_VERSION"
+                },
+              {
+                owner: "vmware-tanzu",
+                repo: "velero",
+                envvar: "VELERO_VERSION"
+                },
+              {
+                owner: "mikefarah",
+                repo: "yq",
+                envvar: "YQ_VERSION"
+                }
+            ]
+            var fs = require('fs').promises
+            var textResult = await fs.readFile("Dockerfile", "utf8");
+            for (i in data) {
+              ({envvar,  ...releaseRepo} = data[i])
+              const res = await github.repos.getLatestRelease(releaseRepo)
+              const line = new RegExp(`ARG ${envvar}=` + '.*')
+              textResult = textResult.replace(line,`ARG ${envvar}="tags/${res["data"]["tag_name"]}"`)
+              await fs.writeFile("Dockerfile", textResult, 'utf8', function (err) {
+                 if (err) return console.log(err);
+              });
+            }
+      
+      - run: |
+          rm -rf package-lock.json node_modules
+          git status
+          git diff
+          if ! $(git diff --cached --name-only --exit-code); then
+            echo "HAS_NO_DIFC=on" >> $GITHUB_ENV
+          else
+            echo "HAS_NO_DIFC=off" >> $GITHUB_ENV
+          fi
+      - if: ${{ env.HAS_NO_DIFC == 'on' }}
+        name: cancelling
+        uses: andymckay/cancel-action@0.2
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          body: "this signifies that there was a change in the other repos"
+          branch-suffix: short-commit-hash
+          branch: gh_actions/bump-deps
+          delete-branch: true
+          title: "Bump dependencies in Dockerfile"
+          assignees: georgettica
