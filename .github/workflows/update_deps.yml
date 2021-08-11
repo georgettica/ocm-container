@@ -60,7 +60,7 @@ jobs:
             
             echo "HAS_NO_DIFC=off" >> $GITHUB_ENV
           fi
-      - if: ${{ env.HAS_NO_DIFC == "on" }}
+      - if: ${{ env.HAS_NO_DIFC == 'on' }}
         name: cancelling
         uses: andymckay/cancel-action@0.2
       - name: Create Pull Request
