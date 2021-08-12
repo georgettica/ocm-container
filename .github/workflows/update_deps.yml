@@ -53,6 +53,7 @@ jobs:
             }
       
       - run: |
+          rm -rf package-lock.json node_modules
           if ! $(git diff --cached --name-only --exit-code); then
             echo "HAS_NO_DIFC=on" >> $GITHUB_ENV
           else
