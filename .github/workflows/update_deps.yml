@@ -38,6 +38,11 @@ jobs:
                 owner: "vmware-tanzu",
                 repo: "velero",
                 envvar: "VELERO_VERSION"
+                },
+              {
+                owner: "mikefarah",
+                repo: "yq",
+                envvar: "YQ_VERSION"
                 }
             ]
             var fs = require('fs').promises
