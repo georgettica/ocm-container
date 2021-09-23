@@ -45,7 +45,7 @@ ARG OSDCTL_VERSION="tags/v0.5.0"
 ENV OSDCTL_URL="https://api.github.com/repos/openshift/osdctl/releases/${OSDCTL_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
-ARG OCM_VERSION="tags/v0.1.56"
+ARG OCM_VERSION="tags/v0.1.57"
 ENV OCM_URL="https://api.github.com/repos/openshift-online/ocm-cli/releases/${OCM_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
