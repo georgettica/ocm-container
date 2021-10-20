@@ -8,6 +8,7 @@ ARG GCLOUD_VERSION=
 RUN mkdir -p /gcloud/bin
 WORKDIR /gcloud
 COPY utils/dockerfile_assets/google-cloud-sdk.repo /etc/yum.repos.d/
+VOLUME ["/root/.config/gcloud/"]
 
 # Install packages
 # These packages will end up in the final image
