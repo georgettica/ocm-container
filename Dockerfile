@@ -41,7 +41,7 @@ ARG ROSA_VERSION="tags/v1.1.4"
 ENV ROSA_URL="https://api.github.com/repos/openshift/rosa/releases/${ROSA_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
-ARG OSDCTL_VERSION="tags/v0.5.0"
+ARG OSDCTL_VERSION="tags/v0.6.0"
 ENV OSDCTL_URL="https://api.github.com/repos/openshift/osdctl/releases/${OSDCTL_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
@@ -59,7 +59,7 @@ ENV AWSCLI_URL="https://awscli.amazonaws.com/${AWSCLI_VERSION}"
 ENV AWSSIG_URL="https://awscli.amazonaws.com/${AWSCLI_VERSION}.sig"
 
 # Add `yq` utility for programatic yaml parsing
-ARG YQ_VERSION="tags/v4.13.4"
+ARG YQ_VERSION="tags/v4.13.5"
 ENV YQ_URL="https://api.github.com/repos/mikefarah/yq/releases/${YQ_VERSION}"
 
 # Directory for the extracted binaries, etc
