@@ -37,7 +37,7 @@ ARG OC_VERSION="stable"
 ENV OC_URL="https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/${OC_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.1.4")
-ARG ROSA_VERSION="tags/v1.1.4"
+ARG ROSA_VERSION="tags/v1.1.5"
 ENV ROSA_URL="https://api.github.com/repos/openshift/rosa/releases/${ROSA_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
