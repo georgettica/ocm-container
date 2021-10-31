@@ -193,7 +193,7 @@ COPY utils/bin /root/.local/bin
 RUN pip3 install o-must-gather
 
 # Setup pagerduty-cli
-ARG PAGERDUTY_VERSION="latest"
+ARG PAGERDUTY_VERSION="0.0.75"
 RUN npm install -g pagerduty-cli@${PAGERDUTY_VERSION}
 
 # Setup bashrc.d directory
