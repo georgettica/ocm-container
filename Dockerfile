@@ -45,7 +45,7 @@ ARG OSDCTL_VERSION="tags/v0.6.0"
 ENV OSDCTL_URL="https://api.github.com/repos/openshift/osdctl/releases/${OSDCTL_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
-ARG OCM_VERSION="tags/v0.1.58"
+ARG OCM_VERSION="tags/v0.1.59"
 ENV OCM_URL="https://api.github.com/repos/openshift-online/ocm-cli/releases/${OCM_VERSION}"
 
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
@@ -59,7 +59,7 @@ ENV AWSCLI_URL="https://awscli.amazonaws.com/${AWSCLI_VERSION}"
 ENV AWSSIG_URL="https://awscli.amazonaws.com/${AWSCLI_VERSION}.sig"
 
 # Add `yq` utility for programatic yaml parsing
-ARG YQ_VERSION="tags/v4.13.5"
+ARG YQ_VERSION="tags/v4.14.1"
 ENV YQ_URL="https://api.github.com/repos/mikefarah/yq/releases/${YQ_VERSION}"
 
 # Directory for the extracted binaries, etc
