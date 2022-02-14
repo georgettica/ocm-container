@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
       - run: npm install fs
-      - uses: actions/github-script@v5
+      - uses: actions/github-script@v6
         with:
           script: |
             const data =  [
