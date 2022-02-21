@@ -107,7 +107,7 @@ ENV AWSCLI_URL="https://awscli.amazonaws.com/${AWSCLI_VERSION}"
 ENV AWSSIG_URL="https://awscli.amazonaws.com/${AWSCLI_VERSION}.sig"
 
 # Add `yq` utility for programatic yaml parsing
-ARG YQ_VERSION="tags/v4.20.1"
+ARG YQ_VERSION="tags/v4.20.2"
 ENV YQ_URL="https://api.github.com/repos/mikefarah/yq/releases/${YQ_VERSION}"
 
 # Directory for the extracted binaries, etc
