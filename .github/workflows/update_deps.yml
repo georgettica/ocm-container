@@ -68,7 +68,7 @@ jobs:
           fi
       - if: ${{ env.HAS_NO_DIFF == 'on' }}
         name: cancelling
-        uses: andymckay/cancel-action@0.4
+        uses: andymckay/cancel-action@0.5
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
