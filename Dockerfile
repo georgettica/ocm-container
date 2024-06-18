@@ -114,7 +114,7 @@ ENV ROSA_URL="https://api.github.com/repos/${ROSA_URL_SLUG}/releases/${ROSA_VERS
 # Add `velero` utility for quick backup verification
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
 # the URL_SLUG is for checking the releasenotes when a version updates
-ARG VELERO_VERSION="tags/v1.13.2"
+ARG VELERO_VERSION="tags/v1.14.0"
 ENV VELERO_URL_SLUG="vmware-tanzu/velero"
 ENV VELERO_URL="https://api.github.com/repos/${VELERO_URL_SLUG}/releases/${VELERO_VERSION}"
 
