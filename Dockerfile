@@ -92,21 +92,21 @@ ENV OC_URL="https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/${O
 # Add `ocm` utility for interacting with the ocm-api
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
 # the URL_SLUG is for checking the releasenotes when a version updates
-ARG OCM_VERSION="tags/v0.1.75"
+ARG OCM_VERSION="tags/v1.0.15"
 ENV OCM_URL_SLUG="openshift-online/ocm-cli"
 ENV OCM_URL="https://api.github.com/repos/${OCM_URL_SLUG}/releases/${OCM_VERSION}"
 
 # Add `osdctl` utility for common OSD commands
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
 # the URL_SLUG is for checking the releasenotes when a version updates
-ARG OSDCTL_VERSION="tags/v0.37.0"
+ARG OSDCTL_VERSION="tags/v0.64.0"
 ENV OSDCTL_URL_SLUG="openshift/osdctl"
 ENV OSDCTL_URL="https://api.github.com/repos/${OSDCTL_URL_SLUG}/releases/${OSDCTL_VERSION}"
 
 # Add `rosa` utility for interacting with rosa clusters
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.1.4")
 # the URL_SLUG is for checking the releasenotes when a version updates
-ARG ROSA_VERSION="tags/v1.2.46"
+ARG ROSA_VERSION="tags/v1.2.65"
 ENV ROSA_URL_SLUG="openshift/rosa"
 ENV ROSA_URL="https://api.github.com/repos/${ROSA_URL_SLUG}/releases/${ROSA_VERSION}"
 
@@ -114,13 +114,13 @@ ENV ROSA_URL="https://api.github.com/repos/${ROSA_URL_SLUG}/releases/${ROSA_VERS
 # Add `velero` utility for quick backup verification
 # Replace "/latest" with "/tags/{tag}" to pin to a specific version (eg: "/tags/v0.4.0")
 # the URL_SLUG is for checking the releasenotes when a version updates
-ARG VELERO_VERSION="tags/v1.14.1"
+ARG VELERO_VERSION="tags/v1.18.2"
 ENV VELERO_URL_SLUG="vmware-tanzu/velero"
 ENV VELERO_URL="https://api.github.com/repos/${VELERO_URL_SLUG}/releases/${VELERO_VERSION}"
 
 # Add `yq` utility for programatic yaml parsing
 # the URL_SLUG is for checking the releasenotes when a version updates
-ARG YQ_VERSION="tags/v4.44.3"
+ARG YQ_VERSION="tags/v4.53.6"
 ENV YQ_URL_SLUG="mikefarah/yq"
 ENV YQ_URL="https://api.github.com/repos/${YQ_URL_SLUG}/releases/${YQ_VERSION}"
 
